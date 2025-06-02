@@ -50,8 +50,8 @@ function Header() {
 
 function About() {
   return (
-    <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-center sm:justify-stretch mt-6 lg:mt-9 px-10 max-h-[82vh]">
-      <div className="w-full sm:w-auto max-w-[35vw] min-w-[320px] aspect-[2/3] bg-black overflow-hidden">
+    <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-center sm:justify-stretch mt-6 lg:mt-9 px-10 h-auto">
+      <div className="w-full max-w-[35vw] min-w-[320px] max-h-[82vh] aspect-[2/3] bg-black overflow-hidden">
         <img
           src={me}
           alt="Me at de Young in SF. Cool place."
