@@ -1,8 +1,16 @@
 import { Drawer } from 'vaul';
 import me from './assets/me.jpg'
 import './index.css'
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.documentElement.classList.add('invisible');
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.remove('invisible');
+    });
+  }, []);
+
   return (
     <>
       <Header />
