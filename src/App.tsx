@@ -44,8 +44,8 @@ function Header() {
 
         {/* Drawer for Menu */}
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-        <Drawer.Content className="bg-white flex flex-col rounded-t-2xl h-[50vh] mt-24 fixed bottom-0 left-0 right-0">
-          <ul className="p-6 space-y-4 text-lg text-black text-center">
+        <Drawer.Content className="bg-[#2B2036] flex flex-col rounded-t-2xl h-[50vh] mt-24 fixed bottom-0 left-0 right-0">
+          <ul className="p-6 space-y-4 text-lg text-white text-center font-[bodoni_moda] italic [&>*]:text-3xl space-y-[8vh]">
             <li>Projects</li>
             <li>Skills</li>
             <li>Contact</li>
