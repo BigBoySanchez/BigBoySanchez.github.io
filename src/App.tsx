@@ -12,10 +12,10 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="bg-gradient-to-b from-[#2B2036] to-[#5c4a80] min-h-screen overflow-y-auto">
       <Header />
       <About />
-    </>
+    </div>
   )
 }
 
@@ -59,23 +59,27 @@ function Header() {
 function About() {
   return (
     <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-center sm:justify-stretch mt-6 lg:mt-9 px-10 h-auto">
-      <div className="w-full min-w-[320px] max-w-[35vw] max-h-[82vh] aspect-[2/3] bg-black overflow-hidden">
+      <div className="w-full min-w-[320px] max-w-[35vw] max-h-[82vh] aspect-[2/3] bg-black overflow-hidden rounded-2xl">
         <img
           src={me}
           alt="Me at de Young in SF. Cool place."
           className="w-full h-full object-cover object-[75%_0%]"
         />
       </div>
-      <div className="w-[320px] sm:w-full min-h-[480px] bg-[#211B33]">
+      <div className="w-[320px] sm:w-full min-h-[480px] bg-[#211B33] rounded-2xl">
         <p className="font-[inter] text-xl font-thin p-3.5">
           I’m a Computer Science student with a strong academic background (GPA: 3.69) and a diverse
           portfolio of technical and community-focused experiences. I’ve developed projects ranging from
           a Java-based chat application and a word puzzle solver to educational games and AR filters.
           My recent coursework includes Operating Systems, Computer Networks, Software Engineering,
-          and Security & Information Assurance.<br /><br />Outside the classroom, I’ve worked as a peer tutor,
+          and Security & Information Assurance.<br /><br />
+          
+          Outside the classroom, I’ve worked as a peer tutor,
           simplifying complex CS concepts for fellow students, and interned with community organizations
           to lead workshops and promote engagement. I’ve also earned recognition at hackathons and
-          contributed to open-source-style collaborations.<br /><br />I'm particularly interested in embedded
+          contributed to open-source-style collaborations.<br /><br />
+          
+          I'm particularly interested in embedded
           systems, inspired by my deep enjoyment of Assembly language. My goal is to graduate by
           Fall 2026 and begin a career in software development or a programming-adjacent field
           where I can continue learning, problem-solving, and contributing meaningfully to a team.
