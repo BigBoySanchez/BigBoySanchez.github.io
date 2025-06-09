@@ -1,7 +1,7 @@
 import me from './assets/me.webp'
 import './index.css'
 import { useEffect, type JSX } from 'react';
-import { Drawer } from 'vaul';
+// import { Drawer } from 'vaul';
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
 function App() {
