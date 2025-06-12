@@ -29,7 +29,7 @@ function Header(): JSX.Element {
       <p className="font-[hurricane] text-6xl ml-2 break-words">Jacob Ativo</p>
       <div className="border-2 border-white rounded-lg p-2 hover:bg-white transition-colors">
         <a href="/Jacob-Ativo-Resume.pdf" target="_blank" className="font-[inter] text-white hover:text-[#211B33] px-4 py-2 rounded-lg transition-colors">
-          Resume
+          Résumé
         </a>
       </div>
 
@@ -129,7 +129,7 @@ function Projects(): JSX.Element {
 
   return (
     <div className="flex flex-col items-center justify-center mt-6 lg:mt-9 mb-9 px-10 h-auto">
-      <h1 className="text-3xl font-bold text-white mb-8">Projects</h1>
+      <h1 className="text-3xl font-bold text-white mb-8 font-[inter]">Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
         {projects.map((project, index) => (
           <a
@@ -138,10 +138,10 @@ function Projects(): JSX.Element {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#211B33] rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 
-            hover:-translate-y-2 hover:bg-[#2B2036] transform text-white"
+            hover:-translate-y-2 hover:bg-[#2B2036] active:-translate-y-2 active:bg-[#2B2036] transform text-white"
           >
-            <h2 className="text-xl font-semibold">{project.title}</h2>
-            <p className="text-gray-300 mt-2">{project.description}</p>
+            <h2 className="text-xl font-semibold font-[inter]">{project.title}</h2>
+            <p className="text-gray-300 mt-2 font-[inter]">{project.description}</p>
           </a>
         ))}
       </div>
@@ -159,12 +159,12 @@ function Skills(): JSX.Element {
   return (
     <div className="flex flex-col items-center justify-center mt-6 lg:mt-9 mb-9 px-10 h-auto">
       <div className="w-full max-w-5xl bg-[#211B33] rounded-2xl p-6">
-        <h2 className="text-3xl font-bold text-white mb-8">Skills</h2>
+        <h2 className="text-3xl font-bold text-white mb-8 font-[inter]">Skills</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(skills).map(([category, items]) => (
             <div key={category}>
-              <h3 className="text-xl font-semibold text-white mb-4">{category}</h3>
-              <ul className="space-y-2 text-gray-300">
+              <h3 className="text-xl font-semibold text-white mb-4 font-[inter]">{category}</h3>
+              <ul className="space-y-2 text-gray-300 font-[inter]">
                 {items.map((skill, idx) => (
                   <li key={idx} className="border-b border-gray-500 pb-1">{skill}</li>
                 ))}
