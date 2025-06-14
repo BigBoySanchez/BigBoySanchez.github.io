@@ -27,11 +27,11 @@ function Header(): JSX.Element {
         href="/Jacob-Ativo-Resume.pdf"
         target="_blank"
         className="
-  border-2 border-white rounded-lg p-2 
+  border-2 border-white rounded-lg 
   hover:bg-white active:bg-white transition-colors 
   font-[inter] text-white 
   hover:text-[#211B33] active:text-[#211B33] 
-  flex items-center justify-center px-4 py-2
+  flex items-center justify-center px-6 py-2
 "
         aria-label="Download Jacob Ativo Résumé"
       >
@@ -87,22 +87,11 @@ function About(): JSX.Element {
         />
       </div>
       <div className="w-[320px] sm:w-full min-h-[480px] bg-[#211B33] rounded-2xl">
-        <p className="font-[inter] text-xl font-thin p-3.5">
-          {/* I'm a Computer Science student who loves turning complex ideas into clear code.
-          Creating full-SDLC projects, without comprimising on teamwork and communication is my top priority.
-          Currently strongest in Java/Python application development and growing fast in low-level/embedded work after enjoying and excelling in Assembly & OS courses.
-          Clear communicator who’s tutored 15 + CS students
-          , award-winning hackathon team lead
-          , fast debugger with full-SDLC Java/JS project delivery
-          , and resourceful builder diving into low-level programming. */}
+        <p className="font-[inter] text-2xl font-thin p-3.5">
+          I'm a Computer Science major at Cal State East Bay with a strong foundation in Java, C++, and systems programming. I enjoy building tools that help people communicate, learn, or play—from multiplayer chat apps to interactive web tools. Alongside technical projects, I've worked as a CS tutor and supplemental instructor, helping peers improve their coding skills. I’ve also led tech workshops through community organizations, reinforcing my belief that code is a tool for inclusion.<br /><br />
 
-          I’m a dedicated Computer Science student with a strong academic record (GPA: 3.69) and a passion for software development and embedded systems. My portfolio includes diverse projects such as a Java-based multi-user chat application, a word puzzle solver, educational games, and AR filters.<br /><br />
+          Lately, I've been diving deeper into low-level development—exploring NASM, bootloaders, and Linux internals—while continuing to grow my experience in team-based software projects. My long-term goal is to work on embedded systems, security, and tooling that make technology more secure, transparent, and teachable. Whether through open-source work or community education, I want to help others better understand the systems they rely on.
 
-          My recent coursework covers Operating Systems, Computer Networks, Software Engineering, and Security & Information Assurance, providing me with a solid foundation in both theoretical and practical aspects of computing.<br /><br />
-
-          Beyond academics, I’ve honed my communication and leadership skills as a peer tutor, simplifying complex CS concepts for fellow students, and as a workshop leader for community organizations. I’ve also earned recognition at hackathons and contributed to collaborative projects, showcasing my ability to work effectively in team environments.<br /><br />
-
-          My growing interest in embedded systems stems from my enjoyment of Assembly language programming. I aim to graduate by Fall 2026 and pursue a career in software development or a programming-adjacent field where I can continue learning, problem-solving, and making meaningful contributions to innovative projects.
         </p>
       </div>
     </section>
@@ -115,24 +104,28 @@ function Projects(): JSX.Element {
   type Project = {
     title: string;
     description: string;
-    link: string;
+    demo: string;
+    source: string;
   };
 
   const projects: Project[] = [
     {
       title: "Communication App",
       description: "Built a multi-user chat application in Java with a team of 5, implementing messaging features and unit tests using JUnit. Followed the SDLC from planning to deployment.",
-      link: "https://github.com/yoshiyahoo/Communication-App",
+      demo: "https://youtu.be/TQXtQrqO0D8",
+      source: "https://github.com/yoshiyahoo/Communication-App",
     },
     {
       title: "MESA U Hackathon",
       description: "Developed an educational game using Pygame that simulates scam emails in a mock inbox. Won “Best Use of GitHub” for effective version control and team collaboration.",
-      link: "https://github.com/BigBoySanchez/Mesa-U",
+      demo: "https://youtu.be/x8ZUAvUPp0o",
+      source: "https://github.com/BigBoySanchez/Mesa-U",
     },
     {
       title: "Clown Cafe",
       description: "Browser-based decoration simulator using Phaser.js and arcade physics. Entirely coded in JavaScript and deployed on itch.io as a fun, interactive project.",
-      link: "https://bigboysanchez.itch.io/clown-cafe",
+      demo: "https://bigboysanchez.itch.io/clown-cafe",
+      source: "https://github.com/BigBoySanchez/Clown-Cafe",
     },
   ];
 
@@ -151,15 +144,45 @@ function Projects(): JSX.Element {
         {projects.map((project, index) => (
           <a
             key={index}
-            href={project.link}
+            href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#211B33] rounded-2xl shadow-md p-6 hover:shadow-xl active:shadow-xl transition-all duration-300 
-        hover:-translate-y-2 active:-translate-y-2 hover:bg-[#2B2036] active:bg-[#2B2036] transform text-white"
+        hover:-translate-y-2 active:-translate-y-2 hover:bg-[#2B2036] active:bg-[#2B2036] transform text-white flex flex-col justify-between"
             aria-label={`View details for ${project.title} project`}
           >
-            <h2 className="text-xl font-semibold font-[inter]">{project.title}</h2>
-            <p className="text-gray-300 mt-2 font-[inter]">{project.description}</p>
+            <div>
+              <h2 className="text-xl font-semibold font-[inter]">{project.title}</h2>
+              <p className="text-gray-300 mt-2 font-[inter]">{project.description}</p>
+            </div>
+            <div className="flex items-center gap-4 mt-6">
+                <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white"
+                aria-label={`Open ${project.title} demo`}
+                title="View Demo"
+                onClick={e => e.stopPropagation()}
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+                </a>
+                <a
+                href={project.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white"
+                aria-label={`View ${project.title} on GitHub`}
+                title="View Source Code"
+                onClick={e => e.stopPropagation()}
+                >
+                <FaGithub className="w-5 h-5" />
+                </a>
+            </div>
           </a>
         ))}
       </div>
