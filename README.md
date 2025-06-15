@@ -2,7 +2,7 @@
 
 > Responsive single-page web app showcasing my projects, built with React + Vite.
 
-**🌐 Live Preview:** https://portfolio-eight-peach-45.vercel.app/  
+**🌐 Live Preview:** jacobativo.me
 _Deployed using [Vercel](https://vercel.com)._
 
 ## Stack
